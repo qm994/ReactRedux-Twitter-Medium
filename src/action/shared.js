@@ -5,7 +5,7 @@ import { setAuthedUser } from '../action/authedUser';
 
 const AUTHED_ID = 'tylermcginnis';
 
- 
+// thunk function creators
 export function handleInitialData () {
     return (dispatch) => {
         return getInitialData()
