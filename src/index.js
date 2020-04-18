@@ -6,9 +6,12 @@ import App from './components/App'
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducers';
- 
-const store = createStore(reducer);
+import middleware from './middleware';
 
+const store = createStore(reducer, middleware);
+
+// all the components inside and under Provider can use `connect` from `react-redux`
+// to access the store
 ReactDOM.render(
     <Provider store={store}>
         <App />
