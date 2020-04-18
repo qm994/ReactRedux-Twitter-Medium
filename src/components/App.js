@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../action/shared';
 
+import Dashboard from './Dashboard'
+
 class App extends Component {
   componentDidMount(){ 
     // so here we use connect() to acccess the store's dispatch function
@@ -9,9 +11,10 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div>
-        Starter Code
+        <Dashboard />
       </div>
     )
   }
