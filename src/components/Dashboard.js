@@ -1,5 +1,6 @@
- import React, { Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Tweet from './Tweet';
 
  // so Dashboard component needs to render all the tweets
   
@@ -9,7 +10,16 @@ import { connect } from 'react-redux';
          // Dashboard components whenever its called
          console.log(this.props)
          return (
-             <div>Dashboard</div>
+             <div>
+                 <h3 className='center'>Your TimeLine</h3>
+                 <ul className='dashboard-list'>
+                     {this.props.tweetIds.map((id) => (
+                        <li key={id}>
+                            <Tweet id={id} />
+                        </li>
+                     ))}
+                 </ul>
+             </div>
          )
      }
  };

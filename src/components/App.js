@@ -11,13 +11,23 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
-        <Dashboard />
+        {
+          this.props.loading === true
+          ? null
+          : <Dashboard />
+        }
       </div>
     )
   }
+};
+
+// The App component will subscribe to the Redux store updates
+function mapStateToProps({authedUser}){
+  return {
+      loading: authedUser === null
+  }
 }
 
-export default connect()(App)
+export default connect(mapStateToProps)(App)
